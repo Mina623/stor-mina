@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>إضافة منتج</title>
+  <link rel="stylesheet" href="/stylesheets/products.css">
+  <script src="/javascripts/prod.js"></script>
+</head>
+<body>
+  <h2>إضافة منتج جديد</h2>
+
+  <form action="/admin/add" method="POST" enctype="multipart/form-data">
+    <div id="message-container"></div>
+
+    <label>اسم المنتج:</label>
+    <input type="text" name="name" required>
+    
+    <label>الوصف :</label>
+    <input type="text" name="discr" >
+
+    <label>السعر:</label>
+    <input type="number" name="price" required>
+
+    <label>صورة المنتج:</label>
+    <input type="file" name="images" multiple accept="image/*" required>
+
+
+    <label>الوسوم (افصل بينهم بفاصلة):</label>
+    <input type="text" name="labels" placeholder="مثلاً: شحن مجاني, خصم 20%, الأكثر مبيعًا">
+
+    <button type="submit">إضافة المنتج</button>
+  </form>
+</body>
+</html>

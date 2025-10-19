@@ -1,0 +1,192 @@
+<!--navbar كامل
+    >>>>>>>>>>>>
+-->
+
+<body>
+  <nav class="navbar">
+    <div class="navbar1">
+      <a href="#">Le martem</a>
+      <div class="as">
+        <a href="#">العربة</a>
+        <a href="#">الحساب</a>
+        <a href="#">عنا</a>
+        <form action="/search" method="GET" class="search-container">
+          <input type="text" name="q" placeholder="ابحث هنا...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    <!--LINKS-->
+    <div class="navbar2" dir="rtl">
+      <div class="dropdown">
+        <a href="#" class="dropbtn">الأثاث</a>
+        <div class="dropdown-content">
+          <a href="#" class="main-link">قائمة 1 - عنصر 1</a>
+          <a href="#">قائمة 1 - عنصر 2</a>
+          <a href="#">قائمة 1 - عنصر 3</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="dropbtn">غرالنوم</a>
+        <div class="dropdown-content">
+          <a href="#" class="main-link">دولاب</a>
+          <a href="#">دولاب جرار</a>
+          <a href="#">دولاب عادي</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+/* تنسيق الشريط الأساسي */
+    .navbar2 {
+      background: #333;
+      padding: 7px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #fff5c4;
+      
+    }
+
+    /* تنسيق اللينكات */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      color: black;
+      text-decoration: none;
+      padding: 2px 12px;
+      display: inline-block;
+    }
+
+    .dropbtn:hover {
+      background: #444;
+      border-radius: 5px;
+      color: #73C8D2;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      min-width: 150px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      z-index: 100;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      margin: 7px 10px 7px 70px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .main-link  {
+      font-weight: 900;
+      text-decoration: underline solid 3px #73C8D2 !important ;
+      text-underline-offset: 5px;
+    }
+    .dropdown-content a:not(.main-link):hover {
+      background: #eee;
+      text-decoration: underline solid 1px #73C8D2 !important ;
+      text-underline-offset: 5px
+    }
+
+    /* إظهار القائمة عند المرور */
+    .dropdown:hover .dropdown-content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-height: 150px;               /* الطول اللي إنت عايزه */
+      align-content: flex-start;  /* 👈 دي اللي بتحل المشكلة فعليًا */
+      width: max-content;         /* يخلي العرض حسب المحتوى */
+      min-width: 150px;
+      max-width: none;            /* تأكد إن مفيش حد أقصى يعوق التمدد */
+      background: white;
+      white-space: nowrap;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 999;
+      width: 100%;
+    }
+    .navbar1 {
+      background-color: #73C8D2;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content:space-between;
+      align-items:center;
+
+    }
+    .navbar1 a {
+    text-decoration: none;
+    }
+    .navbar1 > a {
+    font-size: 30px;
+    font-weight: 900;
+    margin-left: 100px;
+    }
+    .as {
+  margin-right: 200px;
+    }
+    .as > a {
+    color: #0046FF;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 0 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    }
+    .as > a:hover {
+    color: black;
+    transform: scale(1.15);
+    text-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+    }
+  .search-container {
+      display: flex;
+      align-items: center;
+      background: #f1f1f1;
+      border-radius: 25px;
+      padding: 5px 10px;
+      width: 250px;
+      display: inline-block;
+    }
+    .search-container input {
+      border: none;
+      background: transparent;
+      outline: none;
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+    }
+    .search-container button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #555;
+    }
+    .search-container button:hover {
+      color: #000;
+    }
+  </style>
+
+
+
+
+</body>

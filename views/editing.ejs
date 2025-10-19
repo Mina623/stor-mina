@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تعديل المنتج</title>
+    <link rel="stylesheet" href="/stylesheets/products.css">
+    <script src="/javascripts/prod.js"></script>
+</head>
+<body>
+    <h2>تعديل بيانات المنتج</h2>
+
+    <!-- مهم جداً enctype علشان رفع الملفات -->
+    <form action="/admin/edit/product/<%= product._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+        <label>اسم المنتج:</label><br>
+        <input type="text" name="name" value="<%= product.name %>" required><br><br>
+
+        <label>السعر:</label><br>
+        <input type="number" name="price" value="<%= product.price %>" required><br><br>
+
+        <label>الوصف:</label><br>
+        <textarea name="description" rows="4"><%= product.description %></textarea><br><br>
+
+        <!-- عرض الصور الحالية للمنتج -->
+        <label>الصور الحالية:</label><br>
+        <% if (product.images && product.images.length > 0) { %>
+            <% product.images.forEach(image => { %>
+                <img src="<%= image %>" alt="old image" width="100"><br>
+            <% }) %>
+        <% } else { %>
+            <p>لا توجد صور مرفوعة</p>
+        <% } %>
+        <br>
+
+        <!-- رفع صور جديدة -->
+        <label>رفع صور جديدة (اختياري):</label><br>
+        <input type="file" name="images" multiple accept="image/*"><br><br>
+
+        <label>التصنيفات (Labels):</label><br>
+        <input type="text" name="labels" value="<%= product.labels ? product.labels.join(',') : '' %>"><br>
+        <small>افصل بين كل label بفاصلة ,</small><br><br>
+
+        <button type="submit">حفظ التعديلات</button>
+    </form>
+
+    <br>
+    <a href="/admin">رجوع للوحة التحكم</a>
+</body>
+</html>
